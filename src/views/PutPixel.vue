@@ -26,7 +26,7 @@ export default {
   methods: {
     submit() {
       axios
-        .post(`https://pixels.apo.pm/api/pixel/${window.line_size*this.x+this.y}/edit`, {
+        .post(`https://labs.apo.pm/pixels/api/pixel/${window.line_size*this.x+this.y}/edit`, {
           color: this.color.replace('#', '')
         })
         .then(() => {
