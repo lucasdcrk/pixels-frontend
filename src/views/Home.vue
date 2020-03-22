@@ -29,7 +29,7 @@ export default {
   methods: {
     getPixels() {
       axios
-        .get('https://pixels.apo.pm/api/pixels')
+        .get('https://labs.apo.pm/pixels.json')
         .then(response => {
           let data = response.data;
           let pixels = JSON.parse(data);
