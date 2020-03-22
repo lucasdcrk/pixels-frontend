@@ -2,7 +2,9 @@
   <div class="home">
     <div v-if="!error">
       <div v-if="pixels.length > 0">
-        <div v-for="pixel in pixels" :key="pixel.id" class="pixel"></div>
+        <div v-for="pixel in pixels" :key="pixel.id" class="pixel" v-bind:style="{ backgroundColor: '#'+pixel.color}">
+<br v-if="pixel.x >= 1080 / 20">
+        </div>
       </div>
       <div v-else>
         Chargement en cours ...
@@ -29,10 +31,9 @@ export default {
   methods: {
     getPixels() {
       axios
-        .get('https://labs.apo.pm/pixels.json')
+        .get('https://labs.apo.pm/docker/pixels-api/pixels')
         .then(response => {
-          let data = response.data;
-          let pixels = JSON.parse(data);
+          let pixels = response.data;
           
           this.pixels = pixels;
         })
@@ -48,8 +49,15 @@ export default {
 </script>
 
 <style scoped>
+  .home {
+    line-height: 0;
+  }
+
   .pixel {
     height: 20px;
     width: 20px;
+    display: inline-block;
+    border: 1px solid;
+    margin: 0;
   }
 </style>

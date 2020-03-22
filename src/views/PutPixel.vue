@@ -25,8 +25,11 @@ export default {
   },
   methods: {
     submit() {
+      this.x = parseInt(this.x);
+      this.y = parseInt(this.y);
+
       axios
-        .post(`https://labs.apo.pm/docker/pixels-api/pixel/${window.line_size*this.x+this.y}/edit`, {
+        .post(`https://labs.apo.pm/docker/pixels-api/pixels/${window.line_size*this.x+this.y}/edit`, {
           color: this.color.replace('#', '')
         })
         .then(() => {
