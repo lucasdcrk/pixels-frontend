@@ -37,7 +37,7 @@ export default {
       this.sending = true;
       this.x = parseInt(this.x);
       this.y = parseInt(this.y);
-      console.log(this.color.replace('#', ''));
+      
       axios
         .post(`https://labs.apo.pm/docker/pixels-api/pixels/${this.pos_to_id(this.x, this.y)}/edit?color=${this.color.replace('#', '')}`)
         .then(() => {
