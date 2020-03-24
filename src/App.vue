@@ -2,7 +2,7 @@
   <router-view/>
 </template>
 
-<style scoped>
+<style>
   html, body, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
@@ -30,6 +30,7 @@
   }
   body {
     line-height: 1;
+    font-family: 'Courier New', Courier, monospace!important;
   }
   ol, ul {
     list-style: none;
