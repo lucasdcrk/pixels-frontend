@@ -3,8 +3,8 @@
     <h1>Put a pixel</h1>
     <small>Your modifications may take up to 10 seconds to appear.</small>
     <hr>
-    <input type="number" v-model="x" placeholder="X">
-    <input type="number" v-model="y" placeholder="Y">
+    <input type="number" v-model="x" placeholder="X (between 0 and 96)">
+    <input type="number" v-model="y" placeholder="Y (between 0 and 54)">
     <input type="text" v-model="color" placeholder="Color (Hex)">
     <div v-if="!sending">
       <button @click="submit()">Send</button>
